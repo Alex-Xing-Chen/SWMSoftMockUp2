@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SWMSoftMockUp.InspectionPage">
+    <ContentPage.Content>
+        <StackLayout
+            x:Name="inspectionBackground">
+            <ListView x:Name="TaskList"
+                      RowHeight="75">
+                <!--ItemSelected="OnSelection"-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                BackgroundColor="White"
+                                Margin="5,5,5,5">
+                                <Label Text="{Binding name}"
+                                    x:Name="AssetItem"
+                                    FontSize="20"
+                                    TextColor="Black"
+                                    Margin="5,5,5,5"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -13,7 +13,7 @@ namespace SWMSoftMockUp
         {
             InitializeComponent();
 
-            MainPage = new SWMSoftMockUp.MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

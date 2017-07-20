@@ -2,10 +2,385 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SWMSoftMockUp"
+             xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             NavigationPage.HasNavigationBar="False"
              x:Class="SWMSoftMockUp.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout
+        BackgroundColor="Black"
+        Orientation="Vertical"
+        Spacing="0">
+
+        <!--Menu Bar-->
+
+        <Grid
+            VerticalOptions="Start"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="White"
+            Padding="0,10,0,10"
+            ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="FillAndExpand"
+                Spacing="0"
+                BackgroundColor="White">
+
+                <Image
+                    HorizontalOptions="Fill"
+                    BackgroundColor="Transparent"
+                    Source="ic_sync_black.png"/>
+
+                <Label
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Center"
+                    Text="Sync DB"
+                    TextColor="Black"
+                    FontSize="Small" />
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapSyncDB"
+                        NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="White"
+                Spacing="0"
+                Orientation="Vertical">
+
+                <Image
+                    HorizontalOptions="Fill"
+                    BackgroundColor="White"
+                    Source="ic_assignment_ind_black_24dp.png"/>
+
+                <Label
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
+                    Text="My Tasks"
+                    TextColor="Black"
+                    FontSize="Small"/>
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapMyTasks"
+                        NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="0"
+                Grid.Column="2"
+                HorizontalOptions="FillAndExpand"
+                Spacing="0"
+                BackgroundColor="White"
+                Orientation="Vertical">
+
+                <Image
+                    HorizontalOptions="Fill"
+                    BackgroundColor="White"
+                    Source="ic_search_black_24dp.png"/>
+
+                <Label
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Center"
+                    Text="Find"
+                    TextColor="Black"
+                    FontSize="Small"/>
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapFind"
+                        NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="0"
+                Grid.Column="3"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="White"
+                Spacing="0"
+                Orientation="Vertical">
+
+                <Image
+                    HorizontalOptions="Fill"
+                    BackgroundColor="White"
+                    Source="ic_settings_black_24dp.png"/>
+
+                <Label
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Center"
+                    Text="Settings"
+                    TextColor="Black"
+                    FontSize="Small"/>
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapSettings"
+                        NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+
+        </Grid>
+
+        <!--Tabs -->
+
+        <Grid
+            VerticalOptions="Start"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="White"
+            ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                x:Name="facilityTab"
+                Padding="0,10,0,10"
+                Grid.Row="0"
+                Grid.Column="0">
+
+                <Label
+                    Text="Facility"
+                    FontSize="Large"
+                    TextColor="Black"
+                    HorizontalOptions="CenterAndExpand"/>
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapFacilityTab"
+                        NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                x:Name="structureTab"
+                Padding="0,10,0,10"
+                Grid.Row="0"
+                Grid.Column="1">
+
+                <Label
+                    Text="Structure"
+                    FontSize="Large"
+                    TextColor="Black"
+                    HorizontalOptions="CenterAndExpand"/>
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapStructureTab"
+                        NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                x:Name="lidTab"
+                Padding="0,10,0,10"
+                Grid.Row="0"
+                Grid.Column="2">
+
+                <Label
+                    Text="L.I.D."
+                    FontSize="Large"
+                    TextColor="Black"
+                    HorizontalOptions="CenterAndExpand"/>
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapLIDTab"
+                        NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+
+        </Grid>
+
+        <!--CarouselView/TabLayout -->
+
+        <StackLayout
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="Transparent"
+            x:Name="tabfiller">
+
+            <forms:CarouselView x:Name="MainCarouselView">
+                <!--ItemSelected="MainCarouselViewItemSelected"-->
+                <forms:CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout
+                            BackgroundColor="{Binding tabColor}"
+                            Padding="5"
+                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand">
+                            <ListView x:Name="AssetList"
+                                      RowHeight="150"
+                                      ItemsSource="{Binding asset}">
+                                <!--ItemSelected="OnSelection"-->
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+
+                                            <!-- Asset Item-->
+
+                                            <StackLayout
+                                                Orientation="Vertical"
+                                                BackgroundColor="White"
+                                                Margin="5,5,5,5"
+                                                VerticalOptions="FillAndExpand"
+                                                HorizontalOptions="FillAndExpand">
+
+                                                <Label Text="{Binding nameID}"
+                                                       x:Name="AssetItem"
+                                                       VerticalOptions="Start"
+                                                       FontSize="18"
+                                                       TextColor="Black"
+                                                       Margin="5,5,5,5"
+                                                       HorizontalOptions="StartAndExpand"/>
+
+                                                <Grid
+                                                    VerticalOptions="StartAndExpand"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    BackgroundColor="Transparent"
+                                                    ColumnSpacing="0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <StackLayout
+                                                        Grid.Row="0"
+                                                        Grid.Column="0"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        BackgroundColor="White"
+                                                        Spacing="0"
+                                                        Orientation="Vertical">
+
+                                                        <Image
+                                                            HorizontalOptions="CenterAndExpand"
+                                                            Aspect="AspectFit"
+                                                            Source="ic_assignment_return_black_24dp.png">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                    Tapped="RecordsTapped"
+                                                                    NumberOfTapsRequired="1" />
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+
+                                                        <Label
+                                                            Text="Records"
+                                                            FontSize="Small"
+                                                            TextColor="Black"
+                                                            x:Name="RecordLabel"
+                                                            VerticalOptions="Start"
+                                                            HorizontalOptions="Center"/>
+
+                                                    </StackLayout>
+
+                                                    <StackLayout
+                                                        Grid.Row="0"
+                                                        Grid.Column="1"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        BackgroundColor="White"
+                                                        Spacing="0"
+                                                        Orientation="Vertical">
+
+                                                        <Image
+                                                            HorizontalOptions="CenterAndExpand"
+                                                            Aspect="AspectFit"
+                                                            x:Name="{Binding nameID}"
+                                                            Source="ic_assignment_late_black_24dp.png">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                    Tapped="InspectionsTapped"
+                                                                    NumberOfTapsRequired="1" />
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+
+                                                        <Label
+                                                            Text="Inspections"
+                                                            FontSize="Small"
+                                                            TextColor="Black"
+                                                            VerticalOptions="Start"
+                                                            HorizontalOptions="Center" />
+
+                                                    </StackLayout>
+
+                                                    <StackLayout
+                                                        Grid.Row="0"
+                                                        Grid.Column="2"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        Spacing="0"
+                                                        Orientation="Vertical">
+
+                                                        <Image
+                                                            HorizontalOptions="CenterAndExpand"
+                                                            Aspect="AspectFill"
+                                                            Source="ic_info_outline_black_24dp.png">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                    Tapped="InfoTapped"
+                                                                    NumberOfTapsRequired="1" />
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+
+                                                        <Label
+                                                            Text="Info"
+                                                            FontSize="Small"
+                                                            TextColor="Black"
+                                                            VerticalOptions="Start"
+                                                            HorizontalOptions="Center" />
+
+                                                    </StackLayout>
+
+                                                </Grid>
+                                            </StackLayout>
+
+
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+                        </StackLayout>
+                    </DataTemplate>
+                </forms:CarouselView.ItemTemplate>
+            </forms:CarouselView>
+
+        </StackLayout>
+
+    </StackLayout>
+
 
 </ContentPage>
