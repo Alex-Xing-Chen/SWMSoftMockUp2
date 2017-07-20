@@ -161,6 +161,7 @@
             <StackLayout
                 HorizontalOptions="FillAndExpand"
                 x:Name="facilityTab"
+                BackgroundColor="#ffffce00"
                 Padding="0,10,0,10"
                 Grid.Row="0"
                 Grid.Column="0">
@@ -182,6 +183,7 @@
             <StackLayout
                 HorizontalOptions="FillAndExpand"
                 x:Name="structureTab"
+                BackgroundColor="#ffc4fd22"
                 Padding="0,10,0,10"
                 Grid.Row="0"
                 Grid.Column="1">
@@ -203,6 +205,7 @@
             <StackLayout
                 HorizontalOptions="FillAndExpand"
                 x:Name="lidTab"
+                BackgroundColor="#ff00baf0"
                 Padding="0,10,0,10"
                 Grid.Row="0"
                 Grid.Column="2">

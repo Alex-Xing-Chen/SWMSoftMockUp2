@@ -12,9 +12,6 @@ namespace SWMSoftMockUp
         public MainPage()
         {
             InitializeComponent();
-            facilityTab.BackgroundColor = Color.FromHex("#ffce00");
-            structureTab.BackgroundColor = Color.FromHex("#c4fd22");
-            lidTab.BackgroundColor = Color.FromHex("#00baf0");
 
             tabfiller.BackgroundColor = Color.FromHex("ffce00");
 
