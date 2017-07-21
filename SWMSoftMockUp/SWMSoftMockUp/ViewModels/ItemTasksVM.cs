@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
+using SWMSoftMockUp.Models;
 
-namespace SWMSoftMockUp
+namespace SWMSoftMockUp.ViewModels
 {
 
-    public class ItemTasksVM
+    public class ItemTasksVM : INotifyPropertyChanged
     {
         public ObservableCollection<ItemTask> iTasks { get; set; }
 
-        public ItemTasksVM(string assetType){
+        public ItemTasksVM(Tab tab){
 
-            if (assetType.Equals("Facility")) {
+            if (tab.title.Equals("Facility")) {
 
                 iTasks = new ObservableCollection<ItemTask>
             {
@@ -87,25 +89,28 @@ namespace SWMSoftMockUp
 
             };
 
-            }else if (assetType.Equals("Structure"))
+            }else if (tab.title.Equals("Structure"))
             {
                 iTasks = new ObservableCollection<ItemTask>
             {
                 new ItemTask
                 {
-                    name="Inlet"
+                    name="Inlet",
+                    expanded=false
                 },
                 new ItemTask
                 {
-                    name="Outlet"
+                    name="Outlet",
+                    expanded=false
                 },
                 new ItemTask
                 {
-                    name="Structure"
+                    name="Structure",
+                    expanded=false
                 }
             };
             }
-            else if (assetType.Equals("LID"))
+            else if (tab.title.Equals("LID"))
             {
                 iTasks = new ObservableCollection<ItemTask>
             {
@@ -151,5 +156,35 @@ namespace SWMSoftMockUp
 
         }
 
+        internal void HideOrShow(ItemTask item)
+        {
+
+            if (!item.expanded)
+            {
+                item.expanded = true;
+            }
+            else
+            {
+                item.expanded = false;
+            }
+            
+            UpdateTasks(item);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void expandTask(ItemTask item)
+        {
+            item.expanded = true;
+            UpdateTasks(item);
+        }
+
+        private void UpdateTasks(ItemTask item)
+        {
+            int index = iTasks.IndexOf(item);
+            iTasks.Remove(item);
+            iTasks.Insert(index, item);
+
+        }
     }
 }

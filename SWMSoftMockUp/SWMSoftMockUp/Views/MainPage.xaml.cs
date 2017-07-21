@@ -5,10 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace SWMSoftMockUp
+using SWMSoftMockUp.Models;
+using SWMSoftMockUp.ViewModels;
+
+namespace SWMSoftMockUp.Views
 {
     public partial class MainPage : ContentPage
     {
+
+        private string _assetType;
+        private List<Tab> _tabs;
+
         public MainPage()
         {
             InitializeComponent();
@@ -24,7 +31,7 @@ namespace SWMSoftMockUp
             var structureList = new AssetViewModel("Structure");
             var lidList = new AssetViewModel("LID");
 
-            var tabs = new List<Tab>
+            _tabs = new List<Tab>
             {
                 new Tab
                 {
@@ -40,7 +47,7 @@ namespace SWMSoftMockUp
                 },
                 new Tab
                 {
-                    title = "L.I.D.",
+                    title = "LID",
                     tabColor = "#00baf0",
                     asset = lidList.assets
                 }
@@ -48,7 +55,7 @@ namespace SWMSoftMockUp
 
             //var assetList = new AssetViewModel();
 
-            MainCarouselView.ItemsSource = tabs;
+            MainCarouselView.ItemsSource = _tabs;
             ListView aList = MainCarouselView.FindByName<ListView>("AssetList");
 
 
@@ -107,6 +114,7 @@ namespace SWMSoftMockUp
         private void TapFacilityTab(object sender, EventArgs e)
         {
             MainCarouselView.Position = 0;
+            _assetType = "Facility";
             //tabfiller.BackgroundColor = Color.FromHex("ffce00");
             /*AssetList = new ListView();
             AssetList.ItemsSource = new String[]
@@ -122,6 +130,7 @@ namespace SWMSoftMockUp
         {
             //tabfiller.BackgroundColor = Color.FromHex("#c4fd22");
             MainCarouselView.Position = 1;
+            _assetType = "Structure";
             /*AssetList.ItemsSource = new String[]
             {
                 "Structure 1",
@@ -134,6 +143,7 @@ namespace SWMSoftMockUp
         {
             //tabfiller.BackgroundColor = Color.FromHex("#00baf0");
             MainCarouselView.Position = 2;
+            _assetType = "LID";
             /*AssetList.ItemsSource = new String[]
             {
                 "Site 1",
@@ -187,8 +197,30 @@ namespace SWMSoftMockUp
         {
             //var iP = new NavigationPage (new InspectionPage());
 
+            int currenTabPos = MainCarouselView.Position;
+
+            
+
+            if (currenTabPos == 0)
+            {
+                _assetType = "Facility";
+            }
+            else if (currenTabPos == 1)
+            {
+                _assetType = "Structure";
+            }
+            else if (currenTabPos == 2)
+            {
+                _assetType = "LID";
+            }
+            else
+            {
+
+            }
+
+
             //iP.BarBackgroundColor = Color.GreenYellow;
-            await Navigation.PushAsync(new InspectionPage(MainCarouselView.Position));
+            await Navigation.PushAsync(new InspectionPage(_tabs[MainCarouselView.Position]));
             //await Navigation.PushAsync(iP);
         }
     }

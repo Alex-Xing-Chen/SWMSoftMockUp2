@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
 
-namespace SWMSoftMockUp
+namespace SWMSoftMockUp.Models
 {
-    class Tab
+    public class Tab
     {
         public string title { get; set; }
         public string tabColor { get; set; }

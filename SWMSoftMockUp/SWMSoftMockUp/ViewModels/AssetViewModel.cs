@@ -5,7 +5,9 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using System.Text;
 
-namespace SWMSoftMockUp
+using SWMSoftMockUp.Models;
+
+namespace SWMSoftMockUp.ViewModels
 {
     public class AssetViewModel
     {

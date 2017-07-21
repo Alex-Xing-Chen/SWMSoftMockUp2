@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SWMSoftMockUp
+namespace SWMSoftMockUp.Models
 {
     public class ItemTask
     {
@@ -12,5 +12,7 @@ namespace SWMSoftMockUp
         public int rating { get; set; }
         public bool hasPhoto { get; set; }
         public bool complete { get; set; }
+        public bool expanded { get; set; }
     }
+
 }

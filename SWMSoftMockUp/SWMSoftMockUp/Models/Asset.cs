@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SWMSoftMockUp
+namespace SWMSoftMockUp.Models
 {
     public class Asset
     {
