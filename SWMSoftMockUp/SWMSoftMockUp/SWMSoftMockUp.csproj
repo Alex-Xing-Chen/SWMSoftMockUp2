@@ -39,6 +39,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Asset.cs" />
+    <Compile Include="Models\Facility.cs" />
+    <Compile Include="Models\LID.cs" />
+    <Compile Include="Models\Structure.cs" />
     <Compile Include="ViewModels\AssetViewModel.cs" />
     <Compile Include="ViewModels\TabVM.cs" />
     <Compile Include="Views\InspectionPage.xaml.cs">
