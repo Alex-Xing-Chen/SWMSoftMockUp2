@@ -44,7 +44,7 @@
                                 Spacing="10">
 
                                 <Label
-                                    Text="Description"
+                                    Text="{Binding description}"
                                     FontSize="Medium"
                                     TextColor="Black"
                                     FontAttributes="Italic"
@@ -59,8 +59,6 @@
                                     Margin="10,0,10,0"
                                     FontSize="Small"
                                     TextColor="LightGray"
-                                    
-                                    
                                     VerticalOptions="StartAndExpand"
                                     HorizontalOptions="CenterAndExpand" />
 
@@ -78,7 +76,7 @@
                                         Text="1"
                                         WidthRequest="50"
                                         HeightRequest="50"
-                                        TextColor="Black"
+                                        TextColor="{Binding rating1Selected}"
                                         FontAttributes="Bold"
                                         BackgroundColor="Green"
                                         x:Name="RatingOne"
@@ -91,7 +89,7 @@
                                         Clicked="RatingTwo_Clicked"
                                         WidthRequest="50"
                                         HeightRequest="50"
-                                        TextColor="Black"
+                                        TextColor="{Binding rating2Selected}"
                                         FontAttributes="Bold"
                                         BackgroundColor="GreenYellow"
                                         x:Name="RatingTwo"
@@ -104,7 +102,7 @@
                                         Clicked="RatingThree_Clicked"
                                         WidthRequest="50"
                                         HeightRequest="50"
-                                        TextColor="Black"
+                                        TextColor="{Binding rating3Selected}"
                                         FontAttributes="Bold"
                                         BackgroundColor="Yellow"
                                         x:Name="RatingThree"
@@ -117,7 +115,7 @@
                                         Clicked="RatingFour_Clicked"
                                         WidthRequest="50"
                                         HeightRequest="50"
-                                        TextColor="Black"
+                                        TextColor="{Binding rating4Selected}"
                                         FontAttributes="Bold"
                                         BackgroundColor="Orange"
                                         x:Name="RatingFour"
@@ -130,7 +128,7 @@
                                         Clicked="RatingFive_Clicked"
                                         WidthRequest="50"
                                         HeightRequest="50"
-                                        TextColor="Black"
+                                        TextColor="{Binding rating5Selected}"
                                         FontAttributes="Bold"
                                         BackgroundColor="Red"
                                         x:Name="RatingFive"
@@ -154,7 +152,7 @@
                                     Clicked="Photo_Clicked"
                                     WidthRequest="100"
                                     HeightRequest="100"
-                                    TextColor="Black"
+                                    TextColor="{Binding photoBtnSelected}"
                                     BackgroundColor="LightGray"
                                     FontSize="Medium"
                                     FontAttributes="Bold"

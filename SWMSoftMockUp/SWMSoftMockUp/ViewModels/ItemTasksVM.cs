@@ -10,141 +10,409 @@ namespace SWMSoftMockUp.ViewModels
 
     public class ItemTasksVM : INotifyPropertyChanged
     {
-        public ObservableCollection<ItemTask> iTasks { get; set; }
+        public ObservableCollection<ItemTask> _iTasks { get; set; }
+        public string black = "#000000";
+        public string gray = "#808080";
 
         public ItemTasksVM(Tab tab){
 
             if (tab.title.Equals("Facility")) {
 
-                iTasks = new ObservableCollection<ItemTask>
+                _iTasks = new ObservableCollection<ItemTask>
             {
                 new ItemTask
                 {
-                    name="Bench Mark"
+                    name="Bench Mark",
+                    description = "Make sure to record any offset from the actual bench mark",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Emergency Spillway"
+                    name="Emergency Spillway",
+                    description = "Check for structural condition (crackling, flaking, broken seperating leaning), obstructions",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Emergency Spillway: Grating"
+                    name="Emergency Spillway: Grating",
+                    description="Check grate bars for rust, bent, broken, open/closed, and lock",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Facility"
+                    name="Facility",
+                    description="Check for garbage, erosion, proper function",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Fence"
+                    name="Fence",
+                    description="Check for structural condition (broken, leaning)",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Inlet Channel"
+                    name="Inlet Channel",
+                    description="Check for standing water, structural integrity and in-steam erosion",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Manhole 1"
+                    name="Manhole 1",
+                    description="Check for integrity of cover (rust, bent, broken, open/closed, lock-bolts), selling around erosion",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Manhole 2"
+                    name="Manhole 2",
+                    description="Check for integrity of cover (rust, bent, broken, open/closed, lock-bolts), selling around erosion",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Outlet-Back"
+                    name="Outlet-Back",
+                    description="Check for obstructions/debris",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Outlet_Back: Baffle Blocks"
+                    name="Outlet_Back: Baffle Blocks",
+                    description="Check for structural condition (crackling, flaking)",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Outlet_Back: Grate"
+                    name="Outlet_Back: Grate",
+                    description="Check grate bars for rust, bent, broken, open/closed, lock",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Outlet_Back: Headwall"
+                    name="Outlet_Back: Headwall",
+                    description="Filter Bed Erosion",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Outlet_Back: Pipe"
+                    name="Outlet_Back: Pipe",
+                    description="Check Pipe",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Outelet_Front"
+                    name="Outelet_Front",
+                    description="Check for obstruction/debris",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Outlet_Front: Grate"
+                    name="Outlet_Front: Grate",
+                    description="Check grate bars for rust, bent, broken, open/closed, lock",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Outlet_Front: Headwall"
+                    name="Outlet_Front: Headwall",
+                    description="Check for structural condition (crackling/flaking)",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Outlet_Front: Pipe"
+                    name="Outlet_Front: Pipe",
+                    description="Check for obstructions/debris built up",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 }
 
             };
 
             }else if (tab.title.Equals("Structure"))
             {
-                iTasks = new ObservableCollection<ItemTask>
+                _iTasks = new ObservableCollection<ItemTask>
             {
                 new ItemTask
                 {
                     name="Inlet",
-                    expanded=false
+                    description="No obstruction/debris, standing water or sediment accumulation",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
                     name="Outlet",
-                    expanded=false
+                    description="No obstruction/debris, standing water or sediment accumulation",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
                     name="Structure",
-                    expanded=false
+                    description="Structure",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 }
             };
             }
             else if (tab.title.Equals("LID"))
             {
-                iTasks = new ObservableCollection<ItemTask>
+                _iTasks = new ObservableCollection<ItemTask>
             {
                 new ItemTask
                 {
-                    name="Contributing Drainage Area"
+                    name="Contributing Drainage Area",
+                    description="Check for Contributing Drainage Area Condition",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+                },
+                    new ItemTask
+                {
+                    name="Contributing Drainage Area",
+                    description="Trash and Debris",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Inlet"
+                    name="Inlet",
+                    description="Inlet/Flow Spreader/Outlet Structural Integrity",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Pretreatment Area"
+                    name="Inlet",
+                    description="Inlet/Flow Spreader/Outlet Obstruction",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Perimeter"
+                    name="Inlet",
+                    description="Inlet Erosion",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Filter Bed"
+                    name="Inlet",
+                    description="Trash and Debris",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Vegetation"
+                    name="Pretreatment Area",
+                    description="Check for Sediment Accumulation",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Overflow Outlet"
+                    name="Pretreatment Area",
+                    description="Trash and Debris",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 },
                 new ItemTask
                 {
-                    name="Monitoring Well"
+                    name="Perimeter",
+                    description="Trash and Debris",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+                },
+                new ItemTask
+                {
+                    name="Filter Bed",
+                    description="Standing Water",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+                },
+                new ItemTask
+                {
+                    name="Filter Bed",
+                    description="Trash and Debris",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+                },
+                new ItemTask
+                {
+                    name="Filter Bed",
+                    description="Filter Bed Erosion",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+                },
+                new ItemTask
+                {
+                    name="Filter Bed",
+                    description="Mulch Depth",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+                },
+                new ItemTask
+                {
+                    name="Filter Bed",
+                    description="Filter Bed Sediment Accumulation",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+                },
+                new ItemTask
+                {
+                    name="Filter Bed",
+                    description="Filter Bed Surface Sinking",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+                },
+                new ItemTask
+                {
+                    name="Filter Bed",
+                    description="Check Dams",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+                },
+                new ItemTask
+                {
+                    name="Filter Bed",
+                    description="Sediment Accumulation Testing",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+                },
+                new ItemTask
+                {
+                    name="Vegetation",
+                    description="Vegetation Cover",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+
+                },
+                new ItemTask
+                {
+                    name="Vegetation",
+                    description="Vegetation Condition",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+
+                },
+                new ItemTask
+                {
+                    name="Vegetation",
+                    description="Vegetation Composition",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+
+                },
+                new ItemTask
+                {
+                    name="Overflow Outlet",
+                    description="Overflow Outlet Obstruction",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
+                },
+                new ItemTask
+                {
+                    name="Monitoring Well",
+                    description="Monitoring Well Condition",
+                    comments="",
+                    rating=0,
+                    hasPhoto=false,
+                    complete=false
                 }
 
             };
@@ -173,17 +441,87 @@ namespace SWMSoftMockUp.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void expandTask(ItemTask item)
+        internal void UpdateRatings(ItemTask item, int givenRating)
         {
-            item.expanded = true;
+            
+
+            item.rating = givenRating;
+            if (givenRating == 1)
+            {
+                item.rating1Selected = black;
+                item.rating2Selected = gray;
+                item.rating3Selected = gray;
+                item.rating4Selected = gray;
+                item.rating5Selected = gray;
+                item.photoBtnSelected = gray;
+
+            }else if (givenRating == 2)
+            {
+                item.rating1Selected = gray;
+                item.rating2Selected = black;
+                item.rating3Selected = gray;
+                item.rating4Selected = gray;
+                item.rating5Selected = gray;
+                item.photoBtnSelected = gray;
+
+            }
+            else if (givenRating == 3)
+            {
+                item.rating1Selected = gray;
+                item.rating2Selected = gray;
+                item.rating3Selected = black;
+                item.rating4Selected = gray;
+                item.rating5Selected = gray;
+                item.photoBtnSelected = gray;
+
+            }
+            else if (givenRating == 4)
+            {
+                item.rating1Selected = gray;
+                item.rating2Selected = gray;
+                item.rating3Selected = gray;
+                item.rating4Selected = black;
+                item.rating5Selected = gray;
+                item.photoBtnSelected = gray;
+
+            }
+            else if (givenRating == 5)
+            {
+                item.rating1Selected = gray;
+                item.rating2Selected = gray;
+                item.rating3Selected = gray;
+                item.rating4Selected = gray;
+                item.rating5Selected = black;
+                item.photoBtnSelected = gray;
+
+            }
+            else
+            {
+                item.rating1Selected = gray;
+                item.rating2Selected = gray;
+                item.rating3Selected = gray;
+                item.rating4Selected = gray;
+                item.rating5Selected = gray;
+                item.photoBtnSelected = gray;
+            }
+
             UpdateTasks(item);
+
+        }
+
+        internal void UpdatePhotoBtn(ItemTask item)
+        {
+            item.hasPhoto = true;
+            item.photoBtnSelected = black;
+            UpdateTasks(item);
+
         }
 
         private void UpdateTasks(ItemTask item)
         {
-            int index = iTasks.IndexOf(item);
-            iTasks.Remove(item);
-            iTasks.Insert(index, item);
+            int index = _iTasks.IndexOf(item);
+            _iTasks.Remove(item);
+            _iTasks.Insert(index, item);
 
         }
     }

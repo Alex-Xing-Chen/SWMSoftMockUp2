@@ -15,21 +15,32 @@ namespace SWMSoftMockUp.Views
 
         private string _assetType;
         private List<Tab> _tabs;
+        private Asset _currentAsset;
+        private ListView _aList;
+        //private AssetViewModel facilityList;
+        //private AssetViewModel structureList;
+        //private AssetViewModel lidList;
+        private AssetViewModel[] _assetList = new AssetViewModel[3];
+
 
         public MainPage()
         {
             InitializeComponent();
 
-            tabfiller.BackgroundColor = Color.FromHex("ffce00");
+            tabfiller.BackgroundColor = Color.FromHex("ffce00"); //default tab color
 
 
             //syncDB.Clicked += MenuClickHandler;
             // settings.Clicked += MenuClickHandler;
             //myTasks.Clicked += MenuClickHandler;
             //find.Clicked += MenuClickHandler;
-            var facilityList = new AssetViewModel("Facility");
-            var structureList = new AssetViewModel("Structure");
-            var lidList = new AssetViewModel("LID");
+            //facilityList = new AssetViewModel("Facility");
+            //structureList = new AssetViewModel("Structure");
+            //lidList = new AssetViewModel("LID");
+
+            _assetList[0] = new AssetViewModel("Facility");
+            _assetList[1] = new AssetViewModel("Structure");
+            _assetList[2] = new AssetViewModel("Structure");
 
             _tabs = new List<Tab>
             {
@@ -37,26 +48,26 @@ namespace SWMSoftMockUp.Views
                 {
                     title = "Facility",
                     tabColor = "#ffce00",
-                    asset = facilityList.assets
+                    asset = _assetList[0]._assets
                 },
                 new Tab
                 {
                     title = "Structure",
                     tabColor = "#c4fd22",
-                    asset = structureList.assets
+                    asset = _assetList[1]._assets
                 },
                 new Tab
                 {
                     title = "LID",
                     tabColor = "#00baf0",
-                    asset = lidList.assets
+                    asset = _assetList[2]._assets
                 }
             };
 
             //var assetList = new AssetViewModel();
 
             MainCarouselView.ItemsSource = _tabs;
-            ListView aList = MainCarouselView.FindByName<ListView>("AssetList");
+            _aList = MainCarouselView.FindByName<ListView>("AssetList");
 
 
             //aList.ItemsSource = assets;
@@ -179,12 +190,16 @@ namespace SWMSoftMockUp.Views
         private void RecordsTapped(object sender, EventArgs e)
         {
 
+            //System.Diagnostics.Debug.WriteLine("Record Tapped registered");
+            DisplayAlert("Records","Tapped","Ok");
+            // Asset currentItem = _aList.SelectedItem as Asset;
+            // _assetList[MainCarouselView.Position].HideOrShow(currentItem);
+
+            //DisplayAlert("Past Inspection Records", "7/10/19\n8/10/20", "Ok");
         }
 
         private void InspectionsTapped(object sender, EventArgs e)
         {
-
-
             OnCallInspectionPage(true);
         }
 
@@ -198,8 +213,6 @@ namespace SWMSoftMockUp.Views
             //var iP = new NavigationPage (new InspectionPage());
 
             int currenTabPos = MainCarouselView.Position;
-
-            
 
             if (currenTabPos == 0)
             {

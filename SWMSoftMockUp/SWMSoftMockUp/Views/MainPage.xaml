@@ -4,8 +4,10 @@
              xmlns:local="clr-namespace:SWMSoftMockUp"
              xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
              xmlns:tabVM="clr-namespace:SWMSoftMockUp.ViewModels.TabVM;assembly=SWMSoftMockUp"
+             xmlns:viewModel="clr-namespace:SWMSoftMockUp.ViewModels;assembly=SWMSoftMockUp"
              NavigationPage.HasNavigationBar="False"
-             x:Class="SWMSoftMockUp.Views.MainPage">
+             x:Class="SWMSoftMockUp.Views.MainPage"
+             x:Name="Page">
 
     <StackLayout
         BackgroundColor="Black"
@@ -259,6 +261,19 @@
                                     <DataTemplate>
                                         <ViewCell>
 
+                                            <!-- Records/Past Inspections-->
+                                            <StackLayout
+                                                x:Name="RecordLayout"
+                                                Orientation="Vertical"
+                                                IsVisible="{Binding expanded}">
+
+                                                <Label
+                                                    Text="Hello"
+                                                    VerticalOptions="StartAndExpand"
+                                                    HorizontalOptions="CenterAndExpand" />
+
+                                            </StackLayout>
+                                            
                                             <!-- Asset Item-->
 
                                             <StackLayout
@@ -305,7 +320,9 @@
                                                             Source="ic_assignment_return_black_24dp.png">
                                                             <Image.GestureRecognizers>
                                                                 <TapGestureRecognizer
-                                                                    Tapped="RecordsTapped"
+                                                                    
+                                                                    Command="{Binding Path=BindingContext.Expanded, Source={x:Reference Page}}"
+                                                                    CommandParameter="{Binding id}"
                                                                     NumberOfTapsRequired="1" />
                                                             </Image.GestureRecognizers>
                                                         </Image>
@@ -331,7 +348,6 @@
                                                         <Image
                                                             HorizontalOptions="CenterAndExpand"
                                                             Aspect="AspectFit"
-                                                            x:Name="{Binding nameID}"
                                                             Source="ic_assignment_late_black_24dp.png">
                                                             <Image.GestureRecognizers>
                                                                 <TapGestureRecognizer

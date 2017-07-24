@@ -17,6 +17,7 @@ namespace SWMSoftMockUp.Views
     {
 
         private ItemTasksVM _assetList;
+        private ItemTask _currentItem;
 
         public InspectionPage(Tab tab)
         {
@@ -27,7 +28,7 @@ namespace SWMSoftMockUp.Views
             navPage.BarBackgroundColor = Color.FromHex(tab.tabColor);
             inspectionBackground.BackgroundColor = Color.FromHex(tab.tabColor);
             _assetList = new ItemTasksVM(tab);
-            TaskList.ItemsSource = _assetList.iTasks;
+            TaskList.ItemsSource = _assetList._iTasks;
 
         }
 
@@ -46,56 +47,46 @@ namespace SWMSoftMockUp.Views
 
         private void TaskList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var item = e.Item as ItemTask;
+            _currentItem = e.Item as ItemTask;
             
-            _assetList.HideOrShow(item);
+            _assetList.HideOrShow(_currentItem);
 
         }
 
         private void RatingOne_Clicked(object sender, EventArgs e)
         {
-            var btn = e.ToString();
 
-            DisplayAlert("Rating","1","Ok");
+            _assetList.UpdateRatings(_currentItem, 1);
 
         }
 
         private void RatingTwo_Clicked(object sender, EventArgs e)
         {
-            var btn = e.ToString();
-
-            DisplayAlert("Rating", "2", "Ok");
+            _assetList.UpdateRatings(_currentItem, 2);
 
         }
 
         private void RatingThree_Clicked(object sender, EventArgs e)
         {
-            var btn = e.ToString();
-
-            DisplayAlert("Rating", "3", "Ok");
+            _assetList.UpdateRatings(_currentItem, 3);
 
         }
 
         private void RatingFour_Clicked(object sender, EventArgs e)
         {
-            var btn = e.ToString();
-
-            DisplayAlert("Rating","4", "Ok");
+            _assetList.UpdateRatings(_currentItem, 4);
 
         }
 
         private void RatingFive_Clicked(object sender, EventArgs e)
         {
-            var btn = e.ToString();
-
-            DisplayAlert("Rating", "5", "Ok");
+            _assetList.UpdateRatings(_currentItem, 5);
 
         }
 
         private void Photo_Clicked(object sender, EventArgs e)
         {
-            var btn = e.ToString();
-            DisplayAlert("Button", "Picture Taken", "Ok");
+            _assetList.UpdatePhotoBtn(_currentItem);
 
         }
     }

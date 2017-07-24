@@ -23,19 +23,19 @@ namespace SWMSoftMockUp.ViewModels
                 {
                     title = "Facility",
                     tabColor = "#ffce00",
-                    asset = new AssetViewModel("Facility").assets
+                    asset = new AssetViewModel("Facility")._assets
                 },
                 new Tab
                 {
                     title = "Structure",
                     tabColor = "#c4fd22",
-                    asset = new AssetViewModel("Structure").assets
+                    asset = new AssetViewModel("Structure")._assets
                 },
                 new Tab
                 {
                     title = "L.I.D.",
                     tabColor = "#00baf0",
-                    asset = new AssetViewModel("LID").assets
+                    asset = new AssetViewModel("LID")._assets
                 }
             };
         }
