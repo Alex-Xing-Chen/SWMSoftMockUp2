@@ -320,10 +320,9 @@
                                                             Source="ic_assignment_return_black_24dp.png">
                                                             <Image.GestureRecognizers>
                                                                 <TapGestureRecognizer
-                                                                    
+                                                                    Tapped="RecordsTapped"
                                                                     Command="{Binding Path=BindingContext.Expanded, Source={x:Reference Page}}"
-                                                                    CommandParameter="{Binding id}"
-                                                                    NumberOfTapsRequired="1" />
+                                                                    CommandParameter="{Binding id}" />
                                                             </Image.GestureRecognizers>
                                                         </Image>
 

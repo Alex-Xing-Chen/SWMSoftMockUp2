@@ -264,7 +264,7 @@ namespace SWMSoftMockUp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         //ICommand
-        public ICommand Expanded { protected get; set; }
+        public Command Expanded { protected get; set; }
 
         internal void HideOrShow(Asset asset)
         {

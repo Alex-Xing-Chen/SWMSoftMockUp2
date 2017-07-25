@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using SWMSoftMockUp.Models;
 using SWMSoftMockUp.ViewModels;
+using SWMSoftMockUp.IconFormat.Views;
 
 namespace SWMSoftMockUp.Views
 {
@@ -73,51 +74,36 @@ namespace SWMSoftMockUp.Views
             //aList.ItemsSource = assets;
 
         }
-
-        void MenuClickHandler(object sender, EventArgs args)
+        
+        async void LoadingPage()
         {
-            /*
-           Button menuBtn = sender as Button;
-
-           if (menuBtn == syncDB)
-           {
-               sampleLabel.Text = "Sync DB";
-           }else if (menuBtn == myTasks)
-           {
-               sampleLabel.Text = "My Tasks";
-           }else if (menuBtn == find)
-           {
-               sampleLabel.Text = "Find";
-           }else if (menuBtn == settings)
-           {
-               sampleLabel.Text = "Settings";
-           }
-           else
-           {
-               sampleLabel.Text = "Unknown";
-           }
-
-           */
+            var modalPage = new LoadingPage();
+            await Navigation.PushAsync(modalPage);
+            var poppedPage = await Navigation.PopModalAsync();
         }
 
         private void TapSyncDB(object sender, EventArgs e)
         {
-            //sampleLabel.Text = "Sync DB";
+            DisplayAlert("Placeholder","Syncing Database . . . .", "Ok");
+            //LoadingPage();
         }
 
         private void TapMyTasks(object sender, EventArgs e)
         {
             //sampleLabel.Text = "My Tasks";
+            DisplayAlert("PlaceHolder", "Filtering . . . .", "Ok");
         }
 
         private void TapFind(object sender, EventArgs e)
         {
             //sampleLabel.Text = "Find";
+            DisplayAlert("PlaceHolder", "Searching . . . .", "Ok");
         }
 
         private void TapSettings(object sender, EventArgs e)
         {
             //sampleLabel.Text = "Settings";
+            DisplayAlert("PlaceHolder", "Selected Settings . . . .", "Ok");
         }
 
 
@@ -191,7 +177,7 @@ namespace SWMSoftMockUp.Views
         {
 
             //System.Diagnostics.Debug.WriteLine("Record Tapped registered");
-            DisplayAlert("Records","Tapped","Ok");
+            DisplayAlert("PlaceHolder","Records\n7/10/19\n8/10/20","Ok");
             // Asset currentItem = _aList.SelectedItem as Asset;
             // _assetList[MainCarouselView.Position].HideOrShow(currentItem);
 
@@ -205,7 +191,7 @@ namespace SWMSoftMockUp.Views
 
         private void InfoTapped(object sender, EventArgs e)
         {
-
+            DisplayAlert("PlaceHolder","General Information","Ok");
         }
 
         async void OnCallInspectionPage(Boolean b)
@@ -230,11 +216,9 @@ namespace SWMSoftMockUp.Views
             {
 
             }
-
-
-            //iP.BarBackgroundColor = Color.GreenYellow;
-            await Navigation.PushAsync(new InspectionPage(_tabs[MainCarouselView.Position]));
-            //await Navigation.PushAsync(iP);
+            
+            //await Navigation.PushAsync(new InspectionPage(_tabs[MainCarouselView.Position]));
+            await Navigation.PushAsync(new IconInspection(_tabs[MainCarouselView.Position]));
         }
     }
 }

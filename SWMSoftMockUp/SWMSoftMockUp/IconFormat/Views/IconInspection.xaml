@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Plugin.GridViewControl.Common;assembly=Plugin.GridViewControl"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:viewModel="clr-namespace:SWMSoftMockUp.ViewModels"
+             x:Class="SWMSoftMockUp.IconFormat.Views.IconInspection" >
+
+
+    <ContentPage.BindingContext>
+        <viewModel:TabVM />
+    </ContentPage.BindingContext>
+
+    <StackLayout
+        Padding="10,0,10,0"
+        Orientation="Vertical"
+        x:Name="inspectionBackground">
+
+        <Label
+            Text="Assumption Inspection"
+            HorizontalTextAlignment="Center"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="#80000000"
+            TextColor="White"
+            FontSize="Medium" />
+
+        <flv:FlowListView
+            SeparatorVisibility="None"
+            HasUnevenRows="True"
+            FlowColumnMinWidth="110"
+            BackgroundColor="White"
+            x:Name="gridID" >
+
+            <flv:FlowListView.FlowColumnTemplate>
+                <DataTemplate >
+
+                    <StackLayout 
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="White"
+                        Margin="2,2,2,2"
+                        Padding="0,10,0,0"
+                        Orientation="Vertical">
+
+                        <Image
+                            HorizontalOptions="CenterAndExpand"
+                            Source="ic_assignment_late_black_24dp.png" />
+
+                        <Label 
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="StartAndExpand"
+                            LineBreakMode="WordWrap"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding name}"
+                            TextColor="Black"/>
+
+                    </StackLayout>
+
+                </DataTemplate>
+            </flv:FlowListView.FlowColumnTemplate>
+
+        </flv:FlowListView>
+
+    </StackLayout>
+
+</ContentPage>
