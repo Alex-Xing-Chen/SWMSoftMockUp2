@@ -5,101 +5,102 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace SWMSoftMockUp
+using SWMSoftMockUp.Models;
+using SWMSoftMockUp.ViewModels;
+using SWMSoftMockUp.IconFormat.Views;
+
+namespace SWMSoftMockUp.Views
 {
     public partial class MainPage : ContentPage
     {
+
+        private string _assetType;
+        private List<Tab> _tabs;
+        private Asset _currentAsset;
+        private ListView _aList;
+        private AssetViewModel[] _assetList = new AssetViewModel[3];
+
+
         public MainPage()
         {
             InitializeComponent();
 
-            tabfiller.BackgroundColor = Color.FromHex("ffce00");
+            tabfiller.BackgroundColor = Color.FromHex("ffce00"); //default tab color
 
 
             //syncDB.Clicked += MenuClickHandler;
             // settings.Clicked += MenuClickHandler;
             //myTasks.Clicked += MenuClickHandler;
             //find.Clicked += MenuClickHandler;
-            var facilityList = new AssetViewModel("Facility");
-            var structureList = new AssetViewModel("Structure");
-            var lidList = new AssetViewModel("LID");
+            //facilityList = new AssetViewModel("Facility");
+            //structureList = new AssetViewModel("Structure");
+            //lidList = new AssetViewModel("LID");
 
-            var tabs = new List<Tab>
+            _assetList[0] = new AssetViewModel("Facility");
+            _assetList[1] = new AssetViewModel("Structure");
+            _assetList[2] = new AssetViewModel("Structure");
+
+            _tabs = new List<Tab>
             {
                 new Tab
                 {
                     title = "Facility",
                     tabColor = "#ffce00",
-                    asset = facilityList.assets
+                    asset = _assetList[0]._assets
                 },
                 new Tab
                 {
                     title = "Structure",
                     tabColor = "#c4fd22",
-                    asset = structureList.assets
+                    asset = _assetList[1]._assets
                 },
                 new Tab
                 {
-                    title = "L.I.D.",
+                    title = "LID",
                     tabColor = "#00baf0",
-                    asset = lidList.assets
+                    asset = _assetList[2]._assets
                 }
             };
 
             //var assetList = new AssetViewModel();
 
-            MainCarouselView.ItemsSource = tabs;
-            ListView aList = MainCarouselView.FindByName<ListView>("AssetList");
+            MainCarouselView.ItemsSource = _tabs;
+            _aList = MainCarouselView.FindByName<ListView>("AssetList");
 
 
             //aList.ItemsSource = assets;
 
         }
-
-        void MenuClickHandler(object sender, EventArgs args)
+        
+        async void LoadingPage()
         {
-            /*
-           Button menuBtn = sender as Button;
-
-           if (menuBtn == syncDB)
-           {
-               sampleLabel.Text = "Sync DB";
-           }else if (menuBtn == myTasks)
-           {
-               sampleLabel.Text = "My Tasks";
-           }else if (menuBtn == find)
-           {
-               sampleLabel.Text = "Find";
-           }else if (menuBtn == settings)
-           {
-               sampleLabel.Text = "Settings";
-           }
-           else
-           {
-               sampleLabel.Text = "Unknown";
-           }
-
-           */
+            var modalPage = new LoadingPage();
+            await Navigation.PushAsync(modalPage);
+            var poppedPage = await Navigation.PopModalAsync();
         }
 
         private void TapSyncDB(object sender, EventArgs e)
         {
-            //sampleLabel.Text = "Sync DB";
+            DisplayAlert("Placeholder","Syncing Database . . . .", "Ok");
+            //LoadingPage();
         }
 
         private void TapMyTasks(object sender, EventArgs e)
         {
             //sampleLabel.Text = "My Tasks";
+            DisplayAlert("PlaceHolder", "Filtering . . . .", "Ok");
         }
 
         private void TapFind(object sender, EventArgs e)
         {
             //sampleLabel.Text = "Find";
+            DisplayAlert("PlaceHolder", "Searching . . . .", "Ok");
         }
 
         private void TapSettings(object sender, EventArgs e)
         {
             //sampleLabel.Text = "Settings";
+            DisplayAlert("PlaceHolder", "Selected Settings . . . .", "Ok");
         }
 
 
@@ -107,6 +108,7 @@ namespace SWMSoftMockUp
         private void TapFacilityTab(object sender, EventArgs e)
         {
             MainCarouselView.Position = 0;
+            _assetType = "Facility";
             //tabfiller.BackgroundColor = Color.FromHex("ffce00");
             /*AssetList = new ListView();
             AssetList.ItemsSource = new String[]
@@ -122,6 +124,7 @@ namespace SWMSoftMockUp
         {
             //tabfiller.BackgroundColor = Color.FromHex("#c4fd22");
             MainCarouselView.Position = 1;
+            _assetType = "Structure";
             /*AssetList.ItemsSource = new String[]
             {
                 "Structure 1",
@@ -134,6 +137,7 @@ namespace SWMSoftMockUp
         {
             //tabfiller.BackgroundColor = Color.FromHex("#00baf0");
             MainCarouselView.Position = 2;
+            _assetType = "LID";
             /*AssetList.ItemsSource = new String[]
             {
                 "Site 1",
@@ -169,27 +173,49 @@ namespace SWMSoftMockUp
         private void RecordsTapped(object sender, EventArgs e)
         {
 
+            //System.Diagnostics.Debug.WriteLine("Record Tapped registered");
+            DisplayAlert("PlaceHolder","Records\n7/10/19\n8/10/20","Ok");
+            // Asset currentItem = _aList.SelectedItem as Asset;
+            // _assetList[MainCarouselView.Position].HideOrShow(currentItem);
+
+            //DisplayAlert("Past Inspection Records", "7/10/19\n8/10/20", "Ok");
         }
 
         private void InspectionsTapped(object sender, EventArgs e)
         {
-
-
             OnCallInspectionPage(true);
         }
 
         private void InfoTapped(object sender, EventArgs e)
         {
-
+            DisplayAlert("PlaceHolder","General Information","Ok");
         }
 
         async void OnCallInspectionPage(Boolean b)
         {
             //var iP = new NavigationPage (new InspectionPage());
 
-            //iP.BarBackgroundColor = Color.GreenYellow;
-            await Navigation.PushAsync(new InspectionPage(MainCarouselView.Position));
-            //await Navigation.PushAsync(iP);
+            int currenTabPos = MainCarouselView.Position;
+
+            if (currenTabPos == 0)
+            {
+                _assetType = "Facility";
+            }
+            else if (currenTabPos == 1)
+            {
+                _assetType = "Structure";
+            }
+            else if (currenTabPos == 2)
+            {
+                _assetType = "LID";
+            }
+            else
+            {
+
+            }
+            
+            //await Navigation.PushAsync(new InspectionPage(_tabs[MainCarouselView.Position]));
+            await Navigation.PushAsync(new IconInspection(_tabs[MainCarouselView.Position]));
         }
     }
 }

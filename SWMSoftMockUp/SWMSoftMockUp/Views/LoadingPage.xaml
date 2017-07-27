@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SWMSoftMockUp.Views.LoadingPage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+
+            <Image Source="ic_sync_black.png"
+                   Aspect="AspectFill"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" />
+
+
+            <Label Text="Syncing to Database . . . . "
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Black" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

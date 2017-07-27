@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
 using Xamarin.Forms;
 using System.Text;
 
-namespace SWMSoftMockUp
+using SWMSoftMockUp.Models;
+
+namespace SWMSoftMockUp.ViewModels
 {
-    public class AssetViewModel
+    public class AssetViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Asset> assets { get; set; }
+        public ObservableCollection<Asset> _assets { get; set; }
 
         public AssetViewModel(string assetType)
         {
             if (assetType.Equals("Facility")) { 
-                assets = new ObservableCollection<Asset>
+                _assets = new ObservableCollection<Asset>
                 {
                     new Asset
                     {
                         name = "Pondview2",
-                        id = "1"
+                        id = "1",
                     },
                     new Asset
                     {
@@ -121,7 +124,7 @@ namespace SWMSoftMockUp
 
             }else if (assetType.Equals("Structure"))
             {
-                assets = new ObservableCollection<Asset>
+                _assets = new ObservableCollection<Asset>
                 {
                     new Asset
                     {
@@ -199,7 +202,7 @@ namespace SWMSoftMockUp
 
             }else if (assetType.Equals("LID"))
             {
-                assets = new ObservableCollection<Asset>
+                _assets = new ObservableCollection<Asset>
                 {
                     new Asset
                     {
@@ -234,10 +237,57 @@ namespace SWMSoftMockUp
                 };
             }
 
-            for (int x = 0; x < assets.Count; x++)
+            for (int x = 0; x < _assets.Count; x++)
             {
-                assets[x].nameID = assets[x].combine(assets[x].id, assets[x].name);
+                _assets[x].nameID = _assets[x].combine(_assets[x].id, _assets[x].name);
             }
+
+            this.Expanded = new Command<string>((key) =>
+            {
+                this.HideOrShow(getByID(key));
+            });
+
         }
+
+        public Asset getByID(string iD)
+        {
+            for (int x = 0; x < _assets.Count; x++)
+            {
+                if (_assets[x].id.Equals(iD))
+                {
+                    return _assets[x];
+                }
+            }
+            return null;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //ICommand
+        public Command Expanded { protected get; set; }
+
+        internal void HideOrShow(Asset asset)
+        {
+            System.Diagnostics.Debug.WriteLine("Method has been reached");
+            if (!asset.expanded)
+            {
+                asset.expanded = true;
+            }
+            else
+            {
+                asset.expanded = false;
+            }
+
+            UpdateTasks(asset);
+        }
+
+        private void UpdateTasks(Asset asset)
+        {
+            int index = _assets.IndexOf(asset);
+            _assets.Remove(asset);
+            _assets.Insert(index, asset);
+
+        }
+
     }
 }

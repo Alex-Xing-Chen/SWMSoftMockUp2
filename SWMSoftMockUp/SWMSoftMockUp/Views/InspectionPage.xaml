@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SWMSoftMockUp.ViewModels"
+             xmlns:viewModel="clr-namespace:SWMSoftMockUp.ViewModels;assembly=SWMSoftMockUp"
+             x:Class="SWMSoftMockUp.Views.InspectionPage">
+
+    <ContentPage.BindingContext>
+        <viewModel:TabVM />
+    </ContentPage.BindingContext>
+
+    <StackLayout
+        x:Name="inspectionBackground">
+        <ListView 
+            x:Name="TaskList"
+            ItemTapped="TaskList_ItemTapped"
+            HasUnevenRows="True"
+            RowHeight="75">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            BackgroundColor="White"
+                            Margin="5,5,5,5"
+                            Orientation="Vertical"
+                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand"
+                            x:Name="taskCell">
+                            <Label 
+                                Text="{Binding name}"
+                                x:Name="AssetItem"
+                                FontSize="20"
+                                TextColor="Black"
+                                Margin="5,5,5,5"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"/>
+
+                            <StackLayout
+                                x:Name="TaskSheet"
+                                IsVisible="{Binding expanded}"
+                                VerticalOptions="StartAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Vertical"
+                                Spacing="10">
+
+                                <Label
+                                    Text="{Binding description}"
+                                    FontSize="Medium"
+                                    TextColor="Black"
+                                    FontAttributes="Italic"
+                                    VerticalOptions="StartAndExpand"
+                                    HorizontalOptions="StartAndExpand"
+                                    LineBreakMode="CharacterWrap"
+                                    Margin="10,10,10,0"
+                                    x:Name="description" />
+
+                                <Label 
+                                    Text="Select a Rating"
+                                    Margin="10,0,10,0"
+                                    FontSize="Small"
+                                    TextColor="LightGray"
+                                    VerticalOptions="StartAndExpand"
+                                    HorizontalOptions="CenterAndExpand" />
+
+                                <!-- Rating Buttons-->
+                                
+                                <StackLayout
+                                    x:Name="RatingButtonLayout"
+                                    Orientation="Horizontal"
+                                    Spacing="10"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="StartAndExpand">
+
+                                    <Button
+                                        Clicked="RatingOne_Clicked"
+                                        Text="1"
+                                        WidthRequest="50"
+                                        HeightRequest="50"
+                                        TextColor="{Binding rating1Selected}"
+                                        FontAttributes="Bold"
+                                        BackgroundColor="Green"
+                                        x:Name="RatingOne"
+                                        VerticalOptions="StartAndExpand"
+                                        HorizontalOptions="CenterAndExpand"
+                                        FontSize="Small" />
+
+                                    <Button
+                                        Text="2"
+                                        Clicked="RatingTwo_Clicked"
+                                        WidthRequest="50"
+                                        HeightRequest="50"
+                                        TextColor="{Binding rating2Selected}"
+                                        FontAttributes="Bold"
+                                        BackgroundColor="GreenYellow"
+                                        x:Name="RatingTwo"
+                                        VerticalOptions="StartAndExpand"
+                                        HorizontalOptions="CenterAndExpand"
+                                        FontSize="Small" />
+
+                                    <Button
+                                        Text="3"
+                                        Clicked="RatingThree_Clicked"
+                                        WidthRequest="50"
+                                        HeightRequest="50"
+                                        TextColor="{Binding rating3Selected}"
+                                        FontAttributes="Bold"
+                                        BackgroundColor="Yellow"
+                                        x:Name="RatingThree"
+                                        VerticalOptions="StartAndExpand"
+                                        HorizontalOptions="CenterAndExpand"
+                                        FontSize="Small" />
+
+                                    <Button
+                                        Text="4"
+                                        Clicked="RatingFour_Clicked"
+                                        WidthRequest="50"
+                                        HeightRequest="50"
+                                        TextColor="{Binding rating4Selected}"
+                                        FontAttributes="Bold"
+                                        BackgroundColor="Orange"
+                                        x:Name="RatingFour"
+                                        VerticalOptions="StartAndExpand"
+                                        HorizontalOptions="CenterAndExpand"
+                                        FontSize="Small" />
+
+                                    <Button
+                                        Text="5"
+                                        Clicked="RatingFive_Clicked"
+                                        WidthRequest="50"
+                                        HeightRequest="50"
+                                        TextColor="{Binding rating5Selected}"
+                                        FontAttributes="Bold"
+                                        BackgroundColor="Red"
+                                        x:Name="RatingFive"
+                                        VerticalOptions="StartAndExpand"
+                                        HorizontalOptions="CenterAndExpand"
+                                        FontSize="Small" />
+
+                                </StackLayout>
+
+                                <Label
+                                    Text="Comments"
+                                    TextColor="DarkGray"
+                                    FontSize="Medium"
+                                    Margin="10,0,10,50"
+                                    VerticalOptions="StartAndExpand"
+                                    HorizontalOptions="StartAndExpand" />
+
+                                <Button
+                                    x:Name="PhotoButton"
+                                    Text="Photo"
+                                    Clicked="Photo_Clicked"
+                                    WidthRequest="100"
+                                    HeightRequest="100"
+                                    TextColor="{Binding photoBtnSelected}"
+                                    BackgroundColor="LightGray"
+                                    FontSize="Medium"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="StartAndExpand" />
+
+                                <Label
+                                    Text="Take a Picture"
+                                    TextColor="LightGray"
+                                    FontSize="Small"
+                                    Margin="0,0,0,50"
+                                    VerticalOptions="StartAndExpand"
+                                    HorizontalOptions="CenterAndExpand" />
+
+                            </StackLayout>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
