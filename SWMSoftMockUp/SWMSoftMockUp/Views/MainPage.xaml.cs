@@ -18,9 +18,6 @@ namespace SWMSoftMockUp.Views
         private List<Tab> _tabs;
         private Asset _currentAsset;
         private ListView _aList;
-        //private AssetViewModel facilityList;
-        //private AssetViewModel structureList;
-        //private AssetViewModel lidList;
         private AssetViewModel[] _assetList = new AssetViewModel[3];
 
 
