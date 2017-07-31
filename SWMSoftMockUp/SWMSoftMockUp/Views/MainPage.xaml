@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SWMSoftMockUp"
              xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-             xmlns:tabVM="clr-namespace:SWMSoftMockUp.ViewModels.TabVM;assembly=SWMSoftMockUp"
+             xmlns:tabVM="clr-namespace:SWMSoftMockUp.ViewModels;assembly=SWMSoftMockUp"
              xmlns:viewModel="clr-namespace:SWMSoftMockUp.ViewModels;assembly=SWMSoftMockUp"
              NavigationPage.HasNavigationBar="False"
              x:Class="SWMSoftMockUp.Views.MainPage"

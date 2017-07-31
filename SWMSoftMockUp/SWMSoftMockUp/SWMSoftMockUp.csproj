@@ -46,61 +46,6 @@
     <Compile Include="Models\Facility.cs" />
     <Compile Include="Models\LID.cs" />
     <Compile Include="Models\Structure.cs" />
-    <Compile Include="ServerClient\Communicator.cs" />
-    <Compile Include="ServerClient\Models\Asset.cs" />
-    <Compile Include="ServerClient\Models\AssetFacility.cs" />
-    <Compile Include="ServerClient\Models\AssetSite.cs" />
-    <Compile Include="ServerClient\Models\AssetStructure.cs" />
-    <Compile Include="ServerClient\Models\AssignInspectionTaskToMobile.cs" />
-    <Compile Include="ServerClient\Models\BMPType.cs" />
-    <Compile Include="ServerClient\Models\Component.cs" />
-    <Compile Include="ServerClient\Models\ComponentPicture.cs" />
-    <Compile Include="ServerClient\Models\ComponentType.cs" />
-    <Compile Include="ServerClient\Models\ConditionType.cs" />
-    <Compile Include="ServerClient\Models\Configuration.cs" />
-    <Compile Include="ServerClient\Models\FacilityFunction.cs" />
-    <Compile Include="ServerClient\Models\FacilityStatu.cs" />
-    <Compile Include="ServerClient\Models\FacilityType.cs" />
-    <Compile Include="ServerClient\Models\HeadingDefinition.cs" />
-    <Compile Include="ServerClient\Models\Hydrology.cs" />
-    <Compile Include="ServerClient\Models\HydrologySedimentAccumulation.cs" />
-    <Compile Include="ServerClient\Models\HydrologyStageDischarge.cs" />
-    <Compile Include="ServerClient\Models\ImageModel.cs" />
-    <Compile Include="ServerClient\Models\Inspection.cs" />
-    <Compile Include="ServerClient\Models\LandUse.cs" />
-    <Compile Include="ServerClient\Models\LID.cs" />
-    <Compile Include="ServerClient\Models\LIDComponent.cs" />
-    <Compile Include="ServerClient\Models\LIDComponentIndicatorTemplate.cs" />
-    <Compile Include="ServerClient\Models\LIDComponentPicture.cs" />
-    <Compile Include="ServerClient\Models\LIDComponentTemplate.cs" />
-    <Compile Include="ServerClient\Models\LIDComponentType.cs" />
-    <Compile Include="ServerClient\Models\LIDDesignComponentInspectionIndicator.cs" />
-    <Compile Include="ServerClient\Models\LIDDesignType.cs" />
-    <Compile Include="ServerClient\Models\LIDInspectionIndicator.cs" />
-    <Compile Include="ServerClient\Models\LIDInspectionIndicatorType.cs" />
-    <Compile Include="ServerClient\Models\LIDInspectionType.cs" />
-    <Compile Include="ServerClient\Models\LIDPastInspection.cs" />
-    <Compile Include="ServerClient\Models\LIDStatu.cs" />
-    <Compile Include="ServerClient\Models\Maintenance.cs" />
-    <Compile Include="ServerClient\Models\MaintenanceResource.cs" />
-    <Compile Include="ServerClient\Models\MaintenanceStandardTask.cs" />
-    <Compile Include="ServerClient\Models\MaintenanceStandardTaskResource.cs" />
-    <Compile Include="ServerClient\Models\MaintenanceStatu.cs" />
-    <Compile Include="ServerClient\Models\MaintenanceType.cs" />
-    <Compile Include="ServerClient\Models\Resource.cs" />
-    <Compile Include="ServerClient\Models\ResourceType.cs" />
-    <Compile Include="ServerClient\Models\ResourceTypeUnit.cs" />
-    <Compile Include="ServerClient\Models\StaffType.cs" />
-    <Compile Include="ServerClient\Models\StructureMaterial.cs" />
-    <Compile Include="ServerClient\Models\StructureOwnership.cs" />
-    <Compile Include="ServerClient\Models\StructureType.cs" />
-    <Compile Include="ServerClient\Models\TokenObj.cs" />
-    <Compile Include="ServerClient\Models\User.cs" />
-    <Compile Include="ServerClient\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="ServerClient\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="ServerClient\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
-    <Compile Include="ServerClient\Properties\AssemblyInfo.cs" />
-    <Compile Include="ServerClient\ServerClient.cs" />
     <Compile Include="ViewModels\AssetViewModel.cs" />
     <Compile Include="ViewModels\TabVM.cs" />
     <Compile Include="Views\InspectionPage.xaml.cs">
@@ -192,24 +137,20 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="ServerClient\app.config" />
-    <None Include="ServerClient\bin\Debug\MobileServerClient.dll.config" />
-    <None Include="ServerClient\obj\Debug\CoreCompileInputs.cache" />
-    <None Include="ServerClient\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="ServerClient\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="ServerClient\obj\Debug\ServerClient.csproj.App.config" />
-    <None Include="ServerClient\obj\Debug\ServerClient.csprojResolveAssemblyReference.cache" />
-    <None Include="ServerClient\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\InspectionPage.xaml">
@@ -229,101 +170,15 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="ServerClient\bin\Debug\de\Microsoft.OData.Client.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\de\Microsoft.OData.Core.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\de\Microsoft.OData.Edm.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\de\Microsoft.Spatial.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\es\Microsoft.OData.Client.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\es\Microsoft.OData.Core.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\es\Microsoft.OData.Edm.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\es\Microsoft.Spatial.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\fr\Microsoft.OData.Client.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\fr\Microsoft.OData.Core.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\fr\Microsoft.OData.Edm.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\fr\Microsoft.Spatial.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\it\Microsoft.OData.Client.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\it\Microsoft.OData.Core.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\it\Microsoft.OData.Edm.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\it\Microsoft.Spatial.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ja\Microsoft.OData.Client.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ja\Microsoft.OData.Core.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ja\Microsoft.OData.Edm.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ja\Microsoft.Spatial.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ko\Microsoft.OData.Client.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ko\Microsoft.OData.Core.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ko\Microsoft.OData.Edm.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ko\Microsoft.Spatial.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\Microsoft.OData.Client.dll" />
-    <Content Include="ServerClient\bin\Debug\Microsoft.OData.Client.xml" />
-    <Content Include="ServerClient\bin\Debug\Microsoft.OData.Core.dll" />
-    <Content Include="ServerClient\bin\Debug\Microsoft.OData.Core.xml" />
-    <Content Include="ServerClient\bin\Debug\Microsoft.OData.Edm.dll" />
-    <Content Include="ServerClient\bin\Debug\Microsoft.OData.Edm.xml" />
-    <Content Include="ServerClient\bin\Debug\Microsoft.Spatial.dll" />
-    <Content Include="ServerClient\bin\Debug\Microsoft.Spatial.xml" />
-    <Content Include="ServerClient\bin\Debug\MobileServerClient.dll" />
-    <Content Include="ServerClient\bin\Debug\MobileServerClient.dll.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ServerClient\bin\Debug\MobileServerClient.pdb" />
-    <Content Include="ServerClient\bin\Debug\Newtonsoft.Json.dll" />
-    <Content Include="ServerClient\bin\Debug\Newtonsoft.Json.xml" />
-    <Content Include="ServerClient\bin\Debug\PCLCrypto.dll" />
-    <Content Include="ServerClient\bin\Debug\PCLCrypto.xml" />
-    <Content Include="ServerClient\bin\Debug\ru\Microsoft.OData.Client.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ru\Microsoft.OData.Core.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ru\Microsoft.OData.Edm.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ru\Microsoft.Spatial.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\ServerClient.dll.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ServerClient\bin\Debug\Simple.OData.Client.Core.dll" />
-    <Content Include="ServerClient\bin\Debug\Simple.OData.Client.Core.xml" />
-    <Content Include="ServerClient\bin\Debug\Simple.OData.Client.Dynamic.dll" />
-    <Content Include="ServerClient\bin\Debug\Simple.OData.Client.Dynamic.xml" />
-    <Content Include="ServerClient\bin\Debug\Simple.OData.Client.V4.Adapter.dll" />
-    <Content Include="ServerClient\bin\Debug\System.Net.Http.dll" />
-    <Content Include="ServerClient\bin\Debug\System.Net.Http.Extensions.dll" />
-    <Content Include="ServerClient\bin\Debug\System.Net.Http.Extensions.xml" />
-    <Content Include="ServerClient\bin\Debug\System.Net.Http.Primitives.dll" />
-    <Content Include="ServerClient\bin\Debug\System.Net.Http.Primitives.xml" />
-    <Content Include="ServerClient\bin\Debug\System.Net.Http.xml" />
-    <Content Include="ServerClient\bin\Debug\Validation.dll" />
-    <Content Include="ServerClient\bin\Debug\Validation.xml" />
-    <Content Include="ServerClient\bin\Debug\Xamarin.Forms.Core.dll" />
-    <Content Include="ServerClient\bin\Debug\Xamarin.Forms.Core.pdb" />
-    <Content Include="ServerClient\bin\Debug\Xamarin.Forms.Core.xml" />
-    <Content Include="ServerClient\bin\Debug\Xamarin.Forms.Platform.dll" />
-    <Content Include="ServerClient\bin\Debug\Xamarin.Forms.Platform.pdb" />
-    <Content Include="ServerClient\bin\Debug\Xamarin.Forms.Xaml.dll" />
-    <Content Include="ServerClient\bin\Debug\Xamarin.Forms.Xaml.pdb" />
-    <Content Include="ServerClient\bin\Debug\Xamarin.Forms.Xaml.xml" />
-    <Content Include="ServerClient\bin\Debug\zh-Hans\Microsoft.OData.Client.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\zh-Hans\Microsoft.OData.Core.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\zh-Hans\Microsoft.OData.Edm.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\zh-Hans\Microsoft.Spatial.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\zh-Hant\Microsoft.OData.Client.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\zh-Hant\Microsoft.OData.Core.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\zh-Hant\Microsoft.OData.Edm.resources.dll" />
-    <Content Include="ServerClient\bin\Debug\zh-Hant\Microsoft.Spatial.resources.dll" />
-    <Content Include="ServerClient\obj\Debug\MobileServerClient.dll" />
-    <Content Include="ServerClient\obj\Debug\MobileServerClient.pdb" />
-    <Content Include="ServerClient\obj\Debug\ServerClient.csproj.FileListAbsolute.txt" />
-    <Content Include="ServerClient\obj\Debug\TempPE\ODataClient.cs.dll" />
-    <Content Include="ServerClient\ServerClient.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ServerClient\bin\Release\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
     <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
   </Target>
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
 </Project>

@@ -20,14 +20,5 @@ namespace SWMSoftMockUp.Views
 
         }
 
-        async void NavigateBack()
-        {
-
-            
-            //await Navigation.PopModalAsync();
-                //var poppedPage = await Navigation.PopModalAsync();
-            
-        }
-
     }
 }
